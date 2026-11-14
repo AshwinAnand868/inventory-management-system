@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "b3e9a11f-8899-4c12-9999-invmgmt01",
+		"name": "Product Inventory System API",
+		"description": "Postman collection for testing all endpoints of the Product Inventory REST API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Add a New Product (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Wireless Mechanical Keyboard\",\n    \"category\": \"Electronics\",\n    \"price\": 89.99,\n    \"stockQuantity\": 45,\n    \"sku\": \"ELEC-KEY-001\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Retrieve All Products (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Retrieve Product by ID - Success (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Retrieve Product by ID - Not Found (GET 404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/products/999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"products",
+						"999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Update Product Details (PUT)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Wireless Mechanical Keyboard RGB Pro\",\n    \"category\": \"Electronics\",\n    \"price\": 99.99,\n    \"stockQuantity\": 50,\n    \"sku\": \"ELEC-KEY-001\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Retrieve Products by Category (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/products/category/Electronics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"products",
+						"category",
+						"Electronics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Delete a Product (DELETE)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
